@@ -1,3 +1,7 @@
+// import React from 'react';
+// import { createStore } from 'redux
+const { createStore } = Redux; // Redux CDN import syntax
+
 const todo = (state, action) => {
   switch (action.type) {
     case 'ADD_TODO':
@@ -96,3 +100,5 @@ const testToggleTodo = () => {
 testAddTodo();
 testToggleTodo();
 console.log(`All tests passed.`);
+
+const store = createStore(todos);
