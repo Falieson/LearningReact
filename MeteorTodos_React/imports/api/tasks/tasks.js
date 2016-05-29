@@ -1,5 +1,6 @@
-import { Meteor } from 'meteor/meteor';
-import { Mongo } from 'meteor/mongo';
-import { check } from 'meteor/check';
+// import { Meteor } from 'meteor/meteor';
+// import { Mongo } from 'meteor/mongo';
+// import { check } from 'meteor/check';
 
-// import { Tasks } from './tasks';
+import { Tasks } from './collections.js';
+import './methods.js';

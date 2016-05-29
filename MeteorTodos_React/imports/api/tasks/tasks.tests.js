@@ -5,6 +5,7 @@ import { Random } from 'meteor/random';
 import { assert } from 'meteor/practicalmeteor:chai';
 
 import { Tasks } from './collections.js';
+import './methods.js';
 
 if (Meteor.isServer) {
   describe('Tasks', () => {

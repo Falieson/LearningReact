@@ -23,10 +23,3 @@ $ meteor
 # CURRENTLY
 ## STATUS
 UPGRADING FROM `Meteor Todos React` TO New `Production Todos React Material`
-
-## ERROR
-```
-Tasks::methods=> can't delete owned task
-Error: Cannot call method 'apply' of undefined
-    at Context.<anonymous> (imports/api/tasks/tasks.tests.js:34:20)
-```
