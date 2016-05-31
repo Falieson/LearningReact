@@ -8,10 +8,10 @@
 
 # Mocha BDD
 ## Completed
-* Coverage for /api/tasks/methods.js
+* Coverage for Tasks API - methods.js
 
 ## In Progress
-* Coverage for Tasks API (tasks/methods and tasks/server/publications)
+* Coverage for Tasks API - /server/publications.js
 
 ## TODO
 * Coverage for Lists API
