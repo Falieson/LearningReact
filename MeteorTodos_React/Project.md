@@ -7,11 +7,11 @@
 ## In Progress
 
 # Mocha BDD
-## Completed
-* Coverage for Tasks API - methods.js
+## HELP
+* ? Can I combine results of describe "Tasks" from server/publications.tests and methods.tests
 
-## In Progress
-* Coverage for Tasks API - /server/publications.js
+## Completed
+* Coverage for Tasks API - `methods.js` &&  `/server/publications.js`
 
 ## TODO
 * Coverage for Lists API

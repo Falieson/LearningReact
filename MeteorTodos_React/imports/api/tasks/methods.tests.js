@@ -7,11 +7,14 @@ import { assert } from 'meteor/practicalmeteor:chai';
 import { Tasks } from './collections.js';
 import './methods.js';
 
+// ()=> converted to function()
+// ref: http://mochajs.org/#arrow-functions
+
 if (Meteor.isServer) {
-  describe('Tasks', () => {
-    describe('methods', () => {
+  describe('Tasks', function() {
+    describe('methods', function() {
       const userId = Random.id();
-      const username = 'tmeasday';
+      const username = 'testuser';
       const task = {
         text: 'test task',
         createdAt: new Date(),
@@ -19,11 +22,11 @@ if (Meteor.isServer) {
         username,
       };
 
-      beforeEach(() => {
+      beforeEach(function() {
         Tasks.remove({}); // Deletes all items in the collection
       });
 
-      it('can insert new task', () => {
+      it('can insert new task', function() {
         // Find the internal implementation of the task method so we can
         // test it in isolation
         const insertTask = Meteor.server.method_handlers['tasks.insert'];
@@ -38,7 +41,7 @@ if (Meteor.isServer) {
         assert.equal(Tasks.find().count(), 1);
       });
 
-      it('can delete owned task', () => {
+      it('can delete owned task', function() {
         const taskId = Tasks.insert(task);
         const deleteTask = Meteor.server.method_handlers['tasks.remove'];
         const invocation = { userId };
@@ -48,7 +51,7 @@ if (Meteor.isServer) {
         assert.equal(Tasks.find().count(), 0);
       });
 
-      it('can make completed owned task', () => {
+      it('can make completed owned task', function() {
         const taskId = Tasks.insert(task);
         const completeTask = Meteor.server.method_handlers['tasks.setChecked'];
         const invocation = { userId };
@@ -58,7 +61,7 @@ if (Meteor.isServer) {
         assert.equal(Tasks.findOne(taskId).checked, true);
       });
 
-      it('can make private owned task', () => {
+      it('can make private owned task', function() {
         const taskId = Tasks.insert(task);
         const privateTask = Meteor.server.method_handlers['tasks.setPrivate'];
         const invocation = { userId };

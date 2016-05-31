@@ -56,4 +56,13 @@ Meteor.methods({
 
     Tasks.update(taskId, { $set: { private: setToPrivate } });
   },
+  'tasks.find.public'() {
+    const target = {private: { $ne: true } };
+    return Tasks.find(target);
+  },
+  'tasks.find.owned'() {
+    console.log("This=> ", this.userId);
+    const target = {owner: this.userId };
+    return Tasks.find(target);
+  },
 });
