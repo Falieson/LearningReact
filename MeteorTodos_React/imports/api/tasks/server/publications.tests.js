@@ -7,13 +7,14 @@ import { assert } from 'meteor/practicalmeteor:chai';
 import './publications.js';
 
 import { Tasks } from '../collections.js';
+import { myUsername } from '/imports/startup/config/dev.js';
 import '../methods.js';
 
 if (Meteor.isServer) {
   describe('Tasks', function() {
     describe('publications', function() {
       const userId = Random.id();
-      const username = 'testuser';
+      const username = myUsername;
       const task = {
         text: 'test task',
         createdAt: new Date(),

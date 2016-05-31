@@ -13,7 +13,7 @@ $ meteor npm i -S
 ```
 ## TESTING
 ```
-$ meteor test --driver-package practicalmeteor:mocha
+$ meteor test --driver-package practicalmeteor:mocha --port 3100
 ```
 ## RUNNING
 ```
