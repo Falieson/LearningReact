@@ -1,0 +1,19 @@
+{
+  "name": "Abramov16_Redux_Meteor",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "enzyme": "^2.3.0",
+    "faker": "^3.1.0",
+    "meteor-node-stubs": "^0.2.3",
+    "react": "^15.1.0",
+    "react-addons-pure-render-mixin": "^15.1.0",
+    "react-addons-test-utils": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2"
+  }
+}
