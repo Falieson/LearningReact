@@ -14,11 +14,16 @@
 * Coverage for Tasks API (Client Side) - `subscriptions.js`
 * Coverage using Factories and Faker
 * Coverage for Lists API
+* Coverage for React Components
 
 ## HELP
 * ? Can I combine results of describe "Tasks" from server/publications.tests and methods.tests
 
+# Materialize CSS
+## TODO
+* Convert existing ui into Material to exercise learning React UI
+
 # React/Redux
 # UI Testing / Chromatica
-# Materialize CSS
+
 # ApolloStack
