@@ -8,16 +8,22 @@
 
 # Mocha BDD
 ## Completed
-* Coverage for Tasks API - tasks/methods
-
-## In Progress
-* Coverage for Tasks API - tasks/server/publications
+* Coverage for Tasks API (Server Side) - `methods.js` &&  `/server/publications.js`
 
 ## TODO
+* Coverage for Tasks API (Client Side) - `subscriptions.js`
+* Coverage using Factories and Faker
 * Coverage for Lists API
+* Coverage for React Components
 
+## HELP
+* ? Can I combine results of describe "Tasks" from server/publications.tests and methods.tests
 
-# UI Testing / Chromatica
-# React/Redux
 # Materialize CSS
+## TODO
+* Convert existing ui into Material to exercise learning React UI
+
+# React/Redux
+# UI Testing / Chromatica
+
 # ApolloStack
