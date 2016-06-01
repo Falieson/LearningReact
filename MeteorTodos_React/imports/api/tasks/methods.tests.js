@@ -1,3 +1,17 @@
+// TODO change to factories
+// import Factory from 'meteor/dburles:factory';
+// import { faker } from 'faker';
+// const userId = Random.id();
+// const username = myUsername;
+// Factory.define('task', Tasks, {
+//   text: ()=> faker.lorem.sentence(),
+//   createdAt: ()=> new Date(),
+//   owner: ()=> Random.id(),
+//   username: ()=> myUsername,
+// });
+// const task = Factory.create('task');
+
+
 /* eslint-env mocha */
 
 import { Meteor } from 'meteor/meteor';
