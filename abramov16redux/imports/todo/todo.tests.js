@@ -5,10 +5,10 @@
 import { Meteor } from 'meteor/meteor';
 import { assert } from 'meteor/practicalmeteor:chai';
 import faker from 'faker';
-import { Todos } from './collections.js';
-
-import { toggleTodo } from './todo.js';
-
+// import { Todos } from './collections.js';
+// Tempting to use collections but it'd be better to keep the tests in alignment with the tutorial series
+// import { toggleTodo, addTodo } from './todo.js';
+import { TodosReduce } from './todo.js';
 
 const newTodo = {
   id: 0,
@@ -20,28 +20,38 @@ if ( Meteor.isServer ){
 
   describe('Todos', function(){
     describe('methods', function(){
-      beforeEach(function(){
-        Todos.remove({});
-      });
 
       it('can create todo', function() {
-        Todos.insert(newTodo);
-        const records = Todos.find().count();
-        assert.equal(records, 1);
-      });
-
-      it('can toggle todo', function() {
-        const afterToggleExpectation = {
-          id: newTodo.id,
-          text: newTodo.text,
-          completed: !newTodo.completed,
+        const stateBefore = []; // STATE ARRAY
+        const action = { // ACTION OBJECT
+          type: 'ADD_TODO',
+          id: 0,
+          text: 'Learn Redux'
         };
-        const beforeToggle = newTodo;
-        // assert.isFrozen(beforeToggle); ?? FIXME
-
-        const afterToggle = toggleTodo(beforeToggle);
-        assert.deepEqual(afterToggle, afterToggleExpectation);
+        const stateAfter = [
+          {
+            id: 0,
+            text: 'Learn Redux',
+            completed: false,
+          }
+        ];
+        const result = TodosReduce(action, stateBefore);
+        assert.deepEqual(result, stateAfter);
       });
+
+      // it('can toggle todo', function() {
+      //   const afterToggleExpectation = {
+      //     id: newTodo.id,
+      //     text: newTodo.text,
+      //     completed: !newTodo.completed,
+      //   };
+      //   const beforeToggle = newTodo;
+      //   // assert.isFrozen(beforeToggle); ?? FIXME
+      //
+      //   const afterToggle = toggleTodo(beforeToggle);
+      //   assert.deepEqual(afterToggle, afterToggleExpectation);
+      // });
+
 
 
     });
@@ -49,13 +59,3 @@ if ( Meteor.isServer ){
 
   });
 }
-
-
-//
-// +//       beforeEach(function() {
-//  +//         StubCollections.stub(Tasks);
-//  +//       });
-//
-// +//       afterEach(function() {
-//  +//         StubCollections.restore();
-//  +//       });
